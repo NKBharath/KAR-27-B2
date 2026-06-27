@@ -12,12 +12,15 @@ function Login() {
         ...formdata,
         [e.target.name]: e.target.value });
   };
-  console.log(formdata);
+  const handlesubmit = (e) => {
+    e.preventDefault();
+    console.log(formdata);
+  }
   return (
     <div>
         
       <h1>Login</h1>
-      <form>
+      <form onSubmit={handlesubmit}>
         <input
           type="email"
           placeholder="Enter your email"
@@ -33,7 +36,7 @@ function Login() {
           onChange={onChange1}
         />
         <input type="text" placeholder="Enter your address" name="add" onChange={onChange1} />
-        <button>Login</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );
