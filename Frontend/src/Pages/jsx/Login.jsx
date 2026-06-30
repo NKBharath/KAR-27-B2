@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function Login() {
+  const Navigate = useNavigate();
   const [formdata, setformdata] = useState({
     Email: "",
     Password: "",
@@ -15,7 +17,8 @@ function Login() {
   const handlesubmit = (e) => {
     e.preventDefault();
     console.log(formdata);
-  }
+    Navigate("/show-student");
+}
   return (
     <div>
         
@@ -35,8 +38,7 @@ function Login() {
           name="Password"
           onChange={onChange1}
         />
-        <input type="text" placeholder="Enter your address" name="add" onChange={onChange1} />
-        <button type="submit">Login</button>
+        <button type="submit" >Login</button>
       </form>
     </div>
   );
