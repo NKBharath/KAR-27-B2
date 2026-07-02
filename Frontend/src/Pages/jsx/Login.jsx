@@ -2,26 +2,33 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 function Login() {
   const Navigate = useNavigate();
+  //const [Email, setEmail] = useState("");
+  //const [Password, setPassword] = useState("");
   const [formdata, setformdata] = useState({
     Email: "",
     Password: "",
-    no: "80722222",
-    add: "",
+    number: "",
     roll_no: "",
   });
-  const onChange1 = (e) => {
-    setformdata({ 
-        ...formdata,
-        [e.target.name]: e.target.value });
+
+  const handlechange = (e) => {
+    setformdata({
+      ...formdata,
+      [e.target.name]: e.target.value,
+    });
   };
-  const handlesubmit = (e) => {
-    e.preventDefault();
-    console.log(formdata);
-    Navigate("/show-student");
-}
+
+     const handlesubmit = (e) => {
+       e.preventDefault();
+       console.log(formdata);
+       if(formdata.Email === "admin@example.com" && formdata.Password === "1234") {
+         Navigate("/show-student");
+       } else {
+          alert("Invalid email or password");
+       }
+   }
   return (
     <div>
-        
       <h1>Login</h1>
       <form onSubmit={handlesubmit}>
         <input
@@ -29,14 +36,14 @@ function Login() {
           placeholder="Enter your email"
           required
           name="Email"
-          onChange={onChange1}
+          onChange={handlechange}
         />
         <input
           type="password"
           placeholder="Enter your password"
           required
           name="Password"
-          onChange={onChange1}
+          onChange={handlechange}
         />
         <button type="submit" >Login</button>
       </form>

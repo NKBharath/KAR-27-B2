@@ -8,9 +8,9 @@ function ShowStudent() {
       </div>
         <table>
           <thead>
-            <th>Name</th>
-            <th>Age</th>
-            <th>City</th>
+            <td>Name</td>
+            <td>Age</td>
+            <td>City</td>
           </thead>
           <tbody>
             {students.map((student) => (

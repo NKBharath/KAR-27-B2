@@ -1,9 +1,9 @@
-import sidebar from "../Components/Sidebar";
+import Sidebar from "../../Components/Siderbar";
 
 function UpdateStudent() {
     return ( 
         <div>
-       <sidebar />
+       <Sidebar />
         
         
             update student page

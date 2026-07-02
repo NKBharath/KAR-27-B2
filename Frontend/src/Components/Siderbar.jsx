@@ -1,11 +1,13 @@
+import {useNavigate} from "react-router-dom";
 function Sidebar() {
+    const Navigate = useNavigate();
     return ( 
         <div>
             <h1>Sidebar</h1>
-            <h2>Show Student</h2>
-            <h2>Edit Student</h2>
-            <h2>Delete Student</h2>
-            <h2>Add Student</h2>
+            <div onClick={()=> Navigate("/show-student")}>Show Student</div>
+            <div onClick={()=> Navigate("/edit-student")}>Edit Student</div>
+            <div onClick={()=> Navigate("/delete-student")}>Delete Student</div>
+            <div onClick={()=> Navigate("/update-student")}>Update Student</div>
         </div>
      );
 }
